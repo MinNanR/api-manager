@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api-manager-eureka-server
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9030/eureka
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 9030

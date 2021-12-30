@@ -1,0 +1,4 @@
+# Project exclude paths
+/api-manager-auth/target/
+/api-manager-common/target/
+/api-manager-eureka-server/target/
