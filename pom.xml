@@ -12,6 +12,7 @@
         <module>api-manager-eureka-server</module>
         <module>api-manager-auth</module>
         <module>api-manager-common</module>
+        <module>api-manager-swagger</module>
     </modules>
     <packaging>pom</packaging>
 

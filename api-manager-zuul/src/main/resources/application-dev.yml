@@ -1,0 +1,20 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: api-manager-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9030/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+zuul:
+  routes:
+    api-manager-auth:
+      path: /apiManager/auth/**
+      serviceId: api-manager-auth
+      stripPrefix: false

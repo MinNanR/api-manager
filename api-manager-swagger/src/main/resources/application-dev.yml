@@ -1,0 +1,17 @@
+server:
+  port: 9050
+spring:
+  application:
+    name: api-manager-swagger
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9030/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+feign:
+  hystrix:
+    enabled: true
