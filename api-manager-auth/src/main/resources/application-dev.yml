@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: api-manager-auth
+  redis:
+    host: 192.168.6.129
+    port: 6379
+    database: 0
+    password: minnan
+  datasource:
+    url: jdbc:mysql://192.168.6.129:3306/api_manager?serverTimezone=Asia/Shanghai
+    username: Minnan
+    password: minnan
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 600000
+  cache:
+    type: redis
 eureka:
   client:
     service-url:
@@ -18,3 +32,8 @@ feign:
 
 swagger:
   base-package: site.minnan.apimanager.userinterface.fascade
+
+jwt:
+  header: Authorization
+  expiration: 604800
+  secret: min107

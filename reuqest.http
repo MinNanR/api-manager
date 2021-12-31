@@ -1,0 +1,8 @@
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+Accept:
+
+{
+  "username": "min",
+  "password": "c663b11dff4be0badcf652212a2c1102"
+}

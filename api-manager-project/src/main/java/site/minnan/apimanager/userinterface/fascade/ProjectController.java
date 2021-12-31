@@ -12,7 +12,7 @@ import site.minnan.apimanager.userinterface.response.ResponseEntity;
 import java.util.ArrayList;
 
 @Api(tags = "项目")
-@RequestMapping("project")
+@RequestMapping("/apiManager/project")
 @RestController
 public class ProjectController {
 

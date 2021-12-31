@@ -3,6 +3,18 @@ server:
 spring:
   application:
     name: api-manager-zuul
+  datasource:
+    url: jdbc:mysql://192.168.6.129:3306/api_manager?serverTimezone=Asia/Shanghai
+    username: Minnan
+    password: minnan
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 600000
+  redis:
+    host: 192.168.6.129
+    port: 6379
+    database: 0
+    password: minnan
 eureka:
   client:
     service-url:
@@ -22,8 +34,13 @@ zuul:
       path: /apiManager/project/**
       serviceId: api-manager-project
       stripPrefix: false
+    api-manager-user:
+      path: /apiManager/user/**
+      serviceId: api-manager-user
+      stripPrefix: false
 
 swagger-doc:
   doc:
     api-manager-auth: http://localhost:9000/v2/api-docs
     api-manager-project: http://localhost:9001/v2/api-docs
+    api-manager-user: http://localhost:9002/v2/api-docs

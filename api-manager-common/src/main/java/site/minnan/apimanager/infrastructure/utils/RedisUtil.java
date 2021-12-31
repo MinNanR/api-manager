@@ -1,4 +1,4 @@
-package site.minnan.apimanager.infrastructure.util;
+package site.minnan.apimanager.infrastructure.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
