@@ -1,12 +1,12 @@
 server:
-  port: 9050
+  port: 9001
 spring:
   application:
-    name: api-manager-swagger
+    name: api-manager-project
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:9030/eureka
+      defaultZone: http://EurekaA:9000/eureka, http://EurekaB:9001/eureka
     register-with-eureka: true
     fetch-registry: true
   instance:

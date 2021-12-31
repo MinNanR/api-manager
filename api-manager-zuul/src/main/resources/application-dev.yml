@@ -18,3 +18,12 @@ zuul:
       path: /apiManager/auth/**
       serviceId: api-manager-auth
       stripPrefix: false
+    api-manager-project:
+      path: /apiManager/project/**
+      serviceId: api-manager-project
+      stripPrefix: false
+
+swagger-doc:
+  doc:
+    api-manager-auth: http://localhost:9000/v2/api-docs
+    api-manager-project: http://localhost:9001/v2/api-docs

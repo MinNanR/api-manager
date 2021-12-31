@@ -1,8 +1,8 @@
 server:
-  port: 9101
+  port: 9001
 spring:
   application:
-    name: api-manager-swagger
+    name: api-manager-project
 eureka:
   client:
     service-url:

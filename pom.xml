@@ -13,6 +13,7 @@
         <module>api-manager-auth</module>
         <module>api-manager-common</module>
         <module>api-manager-swagger</module>
+        <module>api-manager-project</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -67,6 +68,14 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.spring4all/swagger-spring-boot-starter -->
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.9.0.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
