@@ -4,8 +4,8 @@ import cn.hutool.crypto.digest.Digester;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import site.minnan.apimanager.application.service.UserService;
-import site.minnan.apimanager.domain.aggregate.AuthUser;
-import site.minnan.apimanager.domain.mapper.AuthUserMapper;
+import site.minnan.apimanager.domain.entity.aggregate.AuthUser;
+import site.minnan.apimanager.domain.entity.mapper.AuthUserMapper;
 import site.minnan.apimanager.userinterface.dto.AddUserDTO;
 
 import java.util.UUID;

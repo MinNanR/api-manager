@@ -2,6 +2,8 @@ package site.minnan.apimanager.domain.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 /**
  * 当前操作用户

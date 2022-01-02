@@ -1,8 +1,20 @@
-POST {{baseUrl}}/auth/login
+POST {{authUrl}}/auth/login
 Content-Type: application/json
-Accept:
+Accept: application/json
 
 {
   "username": "min",
   "password": "c663b11dff4be0badcf652212a2c1102"
+}
+
+> {% client.global.set("token", response.body.data.token) %}
+
+###
+POST {{projectUrl}}/project/getProjectList
+Content-Type: application/json
+Accept: application/json
+
+{
+  "pageSize": 10,
+  "pageIndex": 1
 }

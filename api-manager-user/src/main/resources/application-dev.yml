@@ -4,16 +4,16 @@ spring:
   application:
     name: api-manager-user
   datasource:
-    url: jdbc:mysql://192.168.6.129:3306/api_manager?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://minnan.site:3306/api_manager?serverTimezone=Asia/Shanghai
     username: Minnan
     password: minnan
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       max-lifetime: 600000
   redis:
-    host: 192.168.6.129
+    host: minnan.site
     port: 6379
-    database: 0
+    database: 6
     password: minnan
   cache:
     type: redis
@@ -37,3 +37,4 @@ jwt:
   header: Authorization
   expiration: 604800
   secret: min107
+  authorized: true

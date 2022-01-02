@@ -1,4 +1,4 @@
-package site.minnan.apimanager.domain.aggregate;
+package site.minnan.apimanager.domain.entity.aggregate;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

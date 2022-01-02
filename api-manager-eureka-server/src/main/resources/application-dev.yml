@@ -2,14 +2,14 @@ spring:
   application:
     name: api-manager-eureka-server
   datasource:
-    url: jdbc:mysql://192.168.6.129:3306/api_manager?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://minnan.site:3306/api_manager?serverTimezone=Asia/Shanghai
     username: Minnan
     password: minnan
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       max-lifetime: 600000
   redis:
-    host: 192.168.6.129
+    host: minnan.site
     port: 6379
     database: 0
     password: minnan
