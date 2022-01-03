@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import site.minnan.apimanager.application.provider.CommonUserService;
 import site.minnan.apimanager.domain.entity.Principal;
-import site.minnan.apimanager.domain.entity.aggregate.AuthUser;
-import site.minnan.apimanager.domain.entity.mapper.AuthUserMapper;
+import site.minnan.apimanager.domain.aggregate.AuthUser;
+import site.minnan.apimanager.domain.mapper.AuthUserMapper;
 
 import java.util.Optional;
 

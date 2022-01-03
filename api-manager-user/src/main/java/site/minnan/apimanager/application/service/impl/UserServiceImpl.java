@@ -4,8 +4,10 @@ import cn.hutool.crypto.digest.Digester;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import site.minnan.apimanager.application.service.UserService;
-import site.minnan.apimanager.domain.entity.aggregate.AuthUser;
-import site.minnan.apimanager.domain.entity.mapper.AuthUserMapper;
+import site.minnan.apimanager.domain.entity.Principal;
+import site.minnan.apimanager.domain.aggregate.AuthUser;
+import site.minnan.apimanager.domain.mapper.AuthUserMapper;
+import site.minnan.apimanager.infrastructure.context.UserHolder;
 import site.minnan.apimanager.userinterface.dto.AddUserDTO;
 
 import java.util.UUID;
@@ -38,7 +40,8 @@ public class UserServiceImpl implements UserService {
                 .realName(dto.getRealName())
                 .passwordStamp(passwordStamp)
                 .build();
-        user.createUser(dto.getUser());
+        Principal principal = UserHolder.getPrincipal();
+        user.createUser(principal);
         authUserMapper.insert(user);
     }
 }

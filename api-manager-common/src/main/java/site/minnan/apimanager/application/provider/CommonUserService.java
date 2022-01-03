@@ -1,7 +1,7 @@
 package site.minnan.apimanager.application.provider;
 
 import site.minnan.apimanager.domain.entity.Principal;
-import site.minnan.apimanager.domain.entity.aggregate.AuthUser;
+import site.minnan.apimanager.domain.aggregate.AuthUser;
 
 /**
  * 用于记载用户信息的service

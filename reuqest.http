@@ -18,3 +18,35 @@ Accept: application/json
   "pageSize": 10,
   "pageIndex": 1
 }
+
+###
+POST {{projectUrl}}/project/addProject
+Content-Type: application/json
+Accept: application/json
+Authorization: {{token}}
+
+{
+  "projectName": "测试名称1"
+}
+
+###
+POST {{baseUrl}}/project/getProjectList
+Content-Type: application/json
+Accept: application/json
+token: {{token}}
+
+{
+  "pageIndex": 1,
+  "pageSize": 10
+}
+
+###
+POST {{baseUrl}}/project/updateProject
+Content-Type: application/json
+Accept: application/json
+Authorization: {{token}}
+
+{
+  "id": 123,
+  "projectName": "新名字"
+}

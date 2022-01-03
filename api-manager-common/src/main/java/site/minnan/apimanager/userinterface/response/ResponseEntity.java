@@ -61,6 +61,13 @@ public class ResponseEntity<T> implements Serializable {
         return responseEntity;
     }
 
+    public static <T> ResponseEntity<T> success(T data, String message){
+        ResponseEntity<T> responseEntity = new ResponseEntity<>(ResponseCode.SUCCESS);
+        responseEntity.setData(data);
+        responseEntity.setMessage(message);
+        return responseEntity;
+    }
+
     /**
      * 成功并返回定制消息
      *

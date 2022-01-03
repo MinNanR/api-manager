@@ -1,4 +1,4 @@
-package site.minnan.apimanager.domain.entity.aggregate;
+package site.minnan.apimanager.domain.aggregate;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -81,6 +81,7 @@ public class AuthUser {
     public Principal principal() {
         Principal principal = new Principal();
         principal.setUserId(id);
+        principal.setUsername(username);
         principal.setRealName(realName);
         principal.setPasswordStamp(passwordStamp);
         return principal;

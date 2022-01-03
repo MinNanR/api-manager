@@ -49,12 +49,13 @@ public class UserHolder {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         PreAuthorized annotation = signature.getMethod().getAnnotation(PreAuthorized.class);
         boolean authorizedRequired = annotation == null;
-        log.info("aop before");
         String header = request.getHeader(AUTH_HEADER);
         if (StrUtil.isBlank(header) || !header.startsWith("Bearer ")) {
             log.warn("JWT Token does not begin with bearer String");
             return authorizedRequired ? ResponseEntity.invalid("非法用户") : joinPoint.proceed();
         }
+        // TODO: 2022/1/3 由网关处转发时请求头丢失 
+        header = header.substring(7);
         String username = null;
         try {
             username = jwtUtil.getUsernameFromToken(header);

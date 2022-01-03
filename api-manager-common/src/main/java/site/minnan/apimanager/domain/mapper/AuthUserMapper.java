@@ -1,9 +1,9 @@
-package site.minnan.apimanager.domain.entity.mapper;
+package site.minnan.apimanager.domain.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import site.minnan.apimanager.domain.entity.aggregate.AuthUser;
+import site.minnan.apimanager.domain.aggregate.AuthUser;
 
 /**
  *

@@ -3,10 +3,8 @@ package site.minnan.apimanager.userinterface.dto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import site.minnan.apimanager.domain.entity.Principal;
 
 import javax.validation.constraints.NotBlank;
-import java.io.PrintWriter;
 
 /**
  * 添加用户参宿和
@@ -14,7 +12,7 @@ import java.io.PrintWriter;
  */
 @ApiModel("添加用户参数")
 @Data
-public class AddUserDTO implements UserRequireDTO{
+public class AddUserDTO{
 
     @ApiModelProperty(value = "用户名", required = true, example = "admin")
     @NotBlank(message = "用户名不能为空")
@@ -27,11 +25,4 @@ public class AddUserDTO implements UserRequireDTO{
     @ApiModelProperty(value = "真实姓名", required = true, example = "张三")
     @NotBlank(message = "真实姓名不能为空")
     private String realName;
-
-    private Principal user;
-
-    @ApiModelProperty(hidden = true)
-    public Principal getUser() {
-        return user;
-    }
 }

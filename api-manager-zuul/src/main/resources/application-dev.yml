@@ -40,9 +40,17 @@ zuul:
       path: /apiManager/user/**
       serviceId: api-manager-user
       stripPrefix: false
+  sensitive-headers:
+    - ${jwt.header}
 
 swagger-doc:
   doc:
     api-manager-auth: http://localhost:9000/v2/api-docs
     api-manager-project: http://localhost:9001/v2/api-docs
     api-manager-user: http://localhost:9002/v2/api-docs
+
+jwt:
+  header: token
+  expiration: 604800
+  secret: min107
+  authorized: false
