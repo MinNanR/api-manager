@@ -1,6 +1,7 @@
 package site.minnan.apimanager.application.service;
 
 import site.minnan.apimanager.domain.vo.ListQueryVO;
+import site.minnan.apimanager.domain.vo.ProjectInfoVO;
 import site.minnan.apimanager.domain.vo.ProjectListVO;
 import site.minnan.apimanager.userinterface.dto.*;
 
@@ -33,4 +34,19 @@ public interface ProjectService {
      * @param dto
      */
     void updateProject(UpdateProjectDTO dto);
+
+    /**
+     * 加入项目
+     *
+     * @param dto
+     */
+    void joinProject(JoinProjectDTO dto);
+
+    /**
+     * 查询项目详情
+     *
+     * @param dto
+     * @return
+     */
+    ProjectInfoVO getProjectInfo(DetailsQueryDTO dto);
 }

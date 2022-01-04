@@ -36,6 +36,12 @@ feign:
 swagger:
   base-package: site.minnan.apimanager.userinterface.fascade
 
+mybatis-plus:
+  mapper-locations: /site/minnan/apimanager/domain/mapper/*.xml
+  configuration:
+    #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
 jwt:
   header: Authorization
   expiration: 604800

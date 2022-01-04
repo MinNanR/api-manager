@@ -1,4 +1,4 @@
-POST {{baseUrl}}/auth/login
+POST {{authUrl}}/auth/login
 Content-Type: application/json
 Accept: application/json
 
@@ -16,7 +16,7 @@ Accept: application/json
 Authorization: {{token}}
 
 {
-  "projectName": "测试名称1"
+  "projectName": "1004测试项目"
 }
 
 ###
@@ -39,4 +39,22 @@ Authorization: {{token}}
 {
   "id": 123,
   "projectName": "新名字"
+}
+
+###
+POST {{projectUrl}}/project/joinProject
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 7
+}
+
+###
+POST {{projectUrl}}/project/getProjectInfo
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 7
 }
