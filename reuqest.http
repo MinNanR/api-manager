@@ -1,4 +1,4 @@
-POST {{authUrl}}/auth/login
+POST {{baseUrl}}/auth/login
 Content-Type: application/json
 Accept: application/json
 
@@ -8,16 +8,6 @@ Accept: application/json
 }
 
 > {% client.global.set("token", response.body.data.token) %}
-
-###
-POST {{projectUrl}}/project/getProjectList
-Content-Type: application/json
-Accept: application/json
-
-{
-  "pageSize": 10,
-  "pageIndex": 1
-}
 
 ###
 POST {{projectUrl}}/project/addProject
@@ -33,7 +23,7 @@ Authorization: {{token}}
 POST {{baseUrl}}/project/getProjectList
 Content-Type: application/json
 Accept: application/json
-token: {{token}}
+Authorization: {{token}}
 
 {
   "pageIndex": 1,

@@ -37,7 +37,7 @@ swagger:
   base-package: site.minnan.apimanager.userinterface.fascade
 
 jwt:
-  header: token
+  header: Authorization
   expiration: 604800
   secret: min107
   authorized: true

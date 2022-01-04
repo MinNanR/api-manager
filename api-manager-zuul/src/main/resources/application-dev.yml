@@ -41,7 +41,6 @@ zuul:
       serviceId: api-manager-user
       stripPrefix: false
   sensitive-headers:
-    - ${jwt.header}
 
 swagger-doc:
   doc:
@@ -50,7 +49,7 @@ swagger-doc:
     api-manager-user: http://localhost:9002/v2/api-docs
 
 jwt:
-  header: token
+  header: Authorization
   expiration: 604800
   secret: min107
   authorized: false

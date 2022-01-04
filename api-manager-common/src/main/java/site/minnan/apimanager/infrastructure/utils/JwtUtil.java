@@ -73,6 +73,6 @@ public class JwtUtil {
         Date expiration = claims.getExpiration();
         return Objects.equals(username, principal.getUsername())
                 && Objects.equals(passwordStamp, principal.getPasswordStamp())
-                && DateTime.now().isAfter(expiration);
+                && DateTime.now().isBefore(expiration);
     }
 }

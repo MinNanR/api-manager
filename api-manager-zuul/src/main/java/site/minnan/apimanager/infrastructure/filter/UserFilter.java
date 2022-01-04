@@ -79,10 +79,15 @@ public class UserFilter extends ZuulFilter {
             return null;
         }
         Principal principal = commonUserService.loadPrincipalByUserName(username);
-        if (principal == null && jwtUtil.validateToken(token, principal)) {
-            ctx.addZuulRequestHeader(AUTH_HEADER, header);
-        } else {
+//        if (principal == null || jwtUtil.validateToken(token, principal)) {
+//            ctx.addZuulRequestHeader(AUTH_HEADER, header);
+//        } else {
+//            setUnAuthorized.accept(ctx);
+//        }
+        if (principal == null || !jwtUtil.validateToken(token, principal)) {
             setUnAuthorized.accept(ctx);
+        } else {
+            ctx.addZuulRequestHeader(AUTH_HEADER, header);
         }
         return null;
     }
