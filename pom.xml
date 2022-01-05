@@ -14,6 +14,7 @@
         <module>api-manager-common</module>
         <module>api-manager-project</module>
         <module>api-manager-user</module>
+        <module>api-manager-api</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -125,4 +126,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

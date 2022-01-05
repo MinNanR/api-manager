@@ -16,7 +16,7 @@ Accept: application/json
 Authorization: {{token}}
 
 {
-  "projectName": "1004测试项目"
+  "projectName": "小超市进销存管理系统"
 }
 
 ###
@@ -57,4 +57,137 @@ Authorization: {{token}}
 
 {
   "id": 7
+}
+
+###
+POST {{apiUrl}}/api/addApi
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "projectId": 8,
+  "projectName": "小超市进销存管理系统",
+  "url": "/project/user/getUserList",
+  "apiName": "获取用户列表",
+  "method": "POST",
+  "paramList": [
+    {
+      "paramName": "pageSize",
+      "description": "每页显示数量",
+      "type": "String",
+      "required": 1
+    },
+    {
+      "paramName": "pageIndex",
+      "description": "页码",
+      "type": "String",
+      "required": 1
+    }
+  ],
+  "resultList": [
+    {
+      "resultName": "username",
+      "description": "用户名",
+      "type": "String",
+      "whetherEnum": 0
+    },
+    {
+      "resultName": "id",
+      "description": "id",
+      "type": "Integer",
+      "whetherEnum": 0
+    }
+  ]
+}
+
+###
+POST {{apiUrl}}/api/getApiList
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "projectId": 8
+}
+
+###
+POST {{apiUrl}}/api/getApiInfo
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 4
+}
+
+###
+POST {{apiUrl}}/api/updateApi
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 4,
+  "apiName": "获取用户列表",
+  "method": "POST",
+  "url":"/project/user/getUsers",
+  "paramList": [
+    {
+      "paramName": "pageSize",
+      "description": "每页显示数量",
+      "type": "String",
+      "required": 1
+    },
+    {
+      "paramName": "pageIndex",
+      "description": "页码",
+      "type": "String",
+      "required": 1
+    },
+    {
+      "paramName": "keyword",
+      "description": "搜索关键字",
+      "type": "String",
+      "required": 0
+    }
+  ],
+  "resultList": [
+    {
+      "resultName": "username",
+      "description": "用户名",
+      "type": "String",
+      "whetherEnum": 0
+    },
+    {
+      "resultName": "id",
+      "description": "id",
+      "type": "Integer",
+      "whetherEnum": 0
+    },
+    {
+      "resultName": "realName",
+      "description": "真实姓名",
+      "type": "Integer",
+      "whetherEnum": 0
+    },
+    {
+      "resultName": "role",
+      "description": "用户角色",
+      "type": "Integer",
+      "whetherEnum": 1,
+      "enumValue": {
+        "1": "管理员",
+        "2": "普通用户"
+      }
+    }
+  ]
+}
+
+
+###
+POST {{apiUrl}}/api/getApiModifyHistoryList
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "id": 4,
+  "pageIndex": 1,
+  "pageSize": 10
 }

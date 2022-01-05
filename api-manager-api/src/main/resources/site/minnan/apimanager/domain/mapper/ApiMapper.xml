@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.minnan.apimanager.domain.mapper.ApiMapper">
+
+    <!--添加接口-->
+    <insert id="insertApi">
+        insert into api (project_id, project_name, api_name, url, method, headers, comment)
+        VALUE
+        (#{api.projectId}, #{api.projectName}, #{api.apiName}, #{api.url}, #{api.method},
+         #{api.headers}, #{api.comment})
+    </insert>
+</mapper>

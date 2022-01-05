@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.minnan.apimanager.domain.mapper.ApiModifyHistoryMapper">
+
+    <!--添加参数修改记录-->
+    <insert id="insertApiParamHistory">
+        insert into api_param_history (api_id, api_modify_history_id, param_content)
+        value (#{apiId}, #{apiModifyHistoryId}, #{paramContent})
+    </insert>
+
+    <!--添加返回结果修改记录-->
+    <insert id="insertApiResultHistory">
+        insert into api_result_history (api_id, api_modify_history_id, result_content)
+        value (#{apiId}, #{apiModifyHistoryId}, #{resultContent})
+    </insert>
+
+    <!--查询接口修改记录-->
+    <select id="getApiModifyHistory" resultType="site.minnan.apimanager.domain.vo.ApiModifyHistoryVO">
+        select t1.id id, t1.api_id apiId, t1.api_name apiName, t1.url url, t1.method method,
+                t1.headers headers,t1.comment comment, t2.param_content paramList,
+                t3.result_content resultList, t1.create_user_name createUser, t1.create_time createTime
+        from api_modify_history t1
+        left join api_param_history t2 on t1.id = t2.api_modify_history_id
+        left join api_result_history t3 on t1.id = t3.api_modify_history_id
+        where t1.api_id = #{id}
+        limit #{start},#{pageSize}
+    </select>
+</mapper>
